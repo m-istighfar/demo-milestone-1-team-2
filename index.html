@@ -1,8 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Portofolio dan Halaman Demo untuk Bootcamp Software Engineer RevoU."
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, RevoU, Bootcamp, Software Engineer"
+    />
     <title>My Website - M. Istighfar Amal</title>
   </head>
   <body>
@@ -13,6 +22,7 @@
           <li><a href="#biodata">Biodata</a></li>
           <li><a href="#pengalaman">Pengalaman</a></li>
           <li><a href="#kontak">Kontak</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
         </ul>
       </nav>
     </header>
@@ -39,11 +49,162 @@
 
       <section id="kontak">
         <h2>Kontak Saya</h2>
-        <p>Anda dapat menghubungi saya di</p>
-        <address>
-          Email:
-          <a href="mailto:istighfar.amal@gmail.com">istighfar.amal@gmail.com</a>
-        </address>
+        <p>Punya pertanyaan? Silakan isi formulir di bawah ini.</p>
+        <form action="/submit-kontak" method="POST">
+          <p>
+            <label for="contact_name">Nama Anda:</label><br />
+            <input
+              type="text"
+              id="contact_name"
+              name="name"
+              required
+              placeholder="Masukkan nama Anda"
+            />
+          </p>
+          <p>
+            <label for="contact_email">Email Anda:</label><br />
+            <input
+              type="email"
+              id="contact_email"
+              name="email"
+              required
+              placeholder="Email aktif Anda"
+            />
+          </p>
+          <p>
+            <label for="contact_message">Pesan Anda:</label><br />
+            <textarea
+              id="contact_message"
+              name="message"
+              rows="5"
+              cols="40"
+              required
+              placeholder="Tulis pertanyaan Anda..."
+            ></textarea>
+          </p>
+          <br />
+          <input type="submit" value="Kirim Pesan" />
+        </form>
+      </section>
+
+      <section id="testimoni">
+        <h2>Tinggalkan Testimoni</h2>
+        <p>Pernah bekerja sama dengan saya? Silakan tinggalkan testimoni.</p>
+
+        <form action="/submit-testimoni" method="POST">
+          <p>
+            <label for="testimony_name">Nama Lengkap:</label><br />
+            <input
+              type="text"
+              id="testimony_name"
+              name="name"
+              required
+              autofocus
+              placeholder="Masukkan nama Anda"
+            />
+          </p>
+
+          <p>
+            <label for="testimony_email">Email:</label><br />
+            <input
+              type="email"
+              id="testimony_email"
+              name="email"
+              required
+              placeholder="contoh@email.com"
+            />
+          </p>
+
+          <p>
+            <label for="testimony_message">Testimoni Anda:</label><br />
+            <textarea
+              id="testimony_message"
+              name="testimony_message"
+              rows="5"
+              cols="40"
+              placeholder="Tulis testimoni Anda di sini..."
+            ></textarea>
+          </p>
+
+          <fieldset>
+            <legend>Detail Testimoni</legend>
+
+            <p>
+              <label for="service_type">Jenis Layanan yang Diterima:</label
+              ><br />
+              <select id="service_type" name="service_type">
+                <option value="">--Pilih Layanan--</option>
+                <option value="web_development">Web Development</option>
+                <option value="consultation">Konsultasi</option>
+                <option value="training">Pelatihan</option>
+                <option value="other">Lainnya</option>
+              </select>
+            </p>
+
+            <p>
+              <label for="testimony-date">Tanggal Kerjasama:</label><br />
+              <input type="date" id="testimony-date" name="testimony-date" />
+            </p>
+
+            <p>
+              Tingkat Kepuasan:<br />
+              <input type="radio" id="rating_high" name="rating" value="high" />
+              <label for="rating_high">Puas</label><br />
+              <input
+                type="radio"
+                id="rating_medium"
+                name="rating"
+                value="medium"
+                checked
+              />
+              <label for="rating_medium">Cukup</label><br />
+              <input type="radio" id="rating_low" name="rating" value="low" />
+              <label for="rating_low">Kurang</label>
+            </p>
+
+            <p>
+              Aspek yang Memuaskan:<br />
+              <input
+                type="checkbox"
+                id="aspect_communication"
+                name="satisfied_aspects"
+                value="communication"
+              />
+              <label for="aspect_communication">Komunikasi</label><br />
+              <input
+                type="checkbox"
+                id="aspect_quality"
+                name="satisfied_aspects"
+                value="quality"
+              />
+              <label for="aspect_quality">Kualitas Hasil</label><br />
+              <input
+                type="checkbox"
+                id="aspect_timeline"
+                name="satisfied_aspects"
+                value="timeline"
+              />
+              <label for="aspect_timeline">Ketepatan Waktu</label>
+            </p>
+
+            <p>
+              <label for="recommendation_score">Skor Rekomendasi (1-10):</label
+              ><br />
+              1
+              <input
+                type="range"
+                id="recommendation_score"
+                name="recommendation_score"
+                min="1"
+                max="10"
+              />
+              10
+            </p>
+          </fieldset>
+
+          <br />
+          <input type="submit" value="Kirim Testimoni" />
+        </form>
       </section>
     </main>
 
